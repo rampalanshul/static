@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-       stage('Build') {
+        stage('Build') {
             steps {
                 echo 'Hello world'
                 sh 'ls -lah'
@@ -12,7 +12,7 @@ pipeline {
                 sh 'tidy -q -e *.html'
             }
         }
-       stage('Upload to AWS') {
+        stage('Upload to AWS') {
              steps {
                  withAWS(region:'us-east-2',credentials:'aws-static') {
                  sh 'echo "Uploading content with AWS creds"'
